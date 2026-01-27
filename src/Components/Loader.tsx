@@ -54,7 +54,7 @@ export default function Loader({ onFinish }: Props) {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.4, duration: 1 }}
         >
-         WELCOME LEONARDO
+          WELCOME 
         </motion.h1>
 
         <motion.p
