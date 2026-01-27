@@ -114,23 +114,6 @@ const projects: Project[] = [
     ],
     technologies: ["HTML", "CSS", "JavaScript"],
   },
-  {
-    type: "project",
-    title: "Yira Gourmet",
-    desc: "Landing Page About Gourmet.",
-    image: "/src/assets/Img/Gourmet-1.png",
-    demo: "https://music-player-4y4k4la6u-leonardos-projects-bf2523bd.vercel.app",
-    github: "https://github.com/leo124123/Yira-s-Gourmet.git",
-    details: "#",
-    gallery: [
-      "/src/assets/Img/Gourtmet-2.png",
-      "/src/assets/Img/Gourtmet-3.png",
-      "/src/assets/Img/Gourmet-7.png",
-      "/src/assets/Img/Gourmet-8.png",
-      "/src/assets/Img/Gourmet-9.png"
-    ],
-    technologies: ["REACT", "CSS", "JavaScript"],
-  },
 ];
 
 
