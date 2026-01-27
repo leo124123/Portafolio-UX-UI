@@ -1,0 +1,125 @@
+.neo-sidebar {
+  position: fixed;
+  top: 32%;
+  left: 38px;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  z-index: 50;
+}
+
+.neo-line {
+  position: absolute;
+  left: 50%;
+  top: -120px;
+  width: 2px;
+  height: 120px;
+  background: linear-gradient(to bottom, transparent, #22d3ee, transparent);
+  opacity: 0.6;
+}
+
+/* ===== ICONOS ===== */
+
+.neo-icon {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: rgba(15, 23, 42, 0.55);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(34, 211, 238, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #a855f7;
+  cursor: pointer;
+  position: relative;
+  transition: 0.3s ease;
+  box-shadow:
+    0 0 15px rgba(168,85,247,.35),
+    inset 0 0 5px rgba(34,211,238,.25);
+  animation: neoPulse 4s ease-in-out infinite;
+}
+
+.neo-icon:hover {
+  color: #22d3ee;
+  box-shadow:
+    0 0 30px rgba(34,211,238,.8),
+    inset 0 0 18px rgba(34,211,238,.4);
+}
+
+/* ===== ACTIVO ===== */
+
+.active .neo-icon {
+  color: #22d3ee;
+  box-shadow:
+    0 0 45px rgba(34,211,238,1),
+    0 0 90px rgba(168,85,247,.8);
+  transform: scale(1.18);
+}
+
+/* ===== TOOLTIP ===== */
+
+.neo-tooltip {
+  position: absolute;
+  left: 62px;
+  white-space: nowrap;
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-size: 0.7rem;
+  letter-spacing: 2px;
+  background: rgba(15, 23, 42, 0.75);
+  color: #e0f2fe;
+  border: 1px solid rgba(34,211,238,.4);
+  opacity: 0;
+  transform: translateX(-10px);
+  pointer-events: none;
+  transition: 0.3s ease;
+  box-shadow: 0 0 18px rgba(34,211,238,.5);
+}
+
+.neo-icon:hover .neo-tooltip {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* ===== RIPPLE ===== */
+
+.neo-ripple {
+  position: absolute;
+  inset: -6px;
+  border-radius: 50%;
+  border: 1px solid rgba(34,211,238,.5);
+  opacity: 0;
+  animation: none;
+}
+
+.neo-icon:hover .neo-ripple {
+  animation: ripple 1.4s linear infinite;
+}
+
+@keyframes ripple {
+  0% { transform: scale(1); opacity: 0.6; }
+  100% { transform: scale(1.6); opacity: 0; }
+}
+
+/* ===== PULSO ===== */
+
+@keyframes neoPulse {
+  0%,100% {
+    box-shadow: 0 0 14px rgba(168,85,247,.35),
+                inset 0 0 10px rgba(34,211,238,.2);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(34,211,238,.9),
+                inset 0 0 18px rgba(34,211,238,.4);
+  }
+}
+
+/* ===== RESPONSIVE ===== */
+
+@media (max-width: 900px) {
+  .neo-sidebar {
+    display: none;
+  }
+}

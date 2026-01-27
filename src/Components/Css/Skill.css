@@ -1,0 +1,172 @@
+.skills-section {
+  min-height: 100vh;
+  background: transparent;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  perspective: 1800px;
+  overflow: hidden;
+}
+
+.skills-title {
+  font-size: clamp(3rem,5vw,4.5rem);
+  letter-spacing: 12px;
+  color: #e5e7eb;
+  margin-bottom: 80px;
+  text-align: center;
+   color: #c084fc;
+  text-shadow:
+    0 0 6px #c084fc,
+    0 0 12px #c084fc,
+    0 0 24px rgba(192,132,252,.8),
+    0 0 48px rgba(192,132,252,.5);
+  transition: 
+    text-shadow 0.35s ease,
+    transform 0.35s ease;
+}
+
+.skills-title:hover { 
+  text-shadow:
+    0 0 10px #c084fc,
+    0 0 20px #c084fc,
+    0 0 40px rgba(192,132,252,1),
+    0 0 70px rgba(192,132,252,.8);
+  transform: scale(1.04);
+}
+
+.skills-title span {
+  display: block;
+  font-size: .75rem;
+  opacity: .5;
+  letter-spacing: 4px;
+  margin-top: 12px;
+}
+
+/* ===== TECLADO ===== */
+
+.keyboard {
+  display: grid;
+  grid-template-columns: repeat(5, 90px);
+  gap: 20px;
+  transform-style: preserve-3d;
+  transform: rotateX(28deg) rotateZ(-12deg);
+}
+
+/* ===== TECLA ===== */
+
+.keycap {
+  width: 90px;
+  height: 90px;
+  position: relative;
+  transform-style: preserve-3d;
+  cursor: pointer;
+}
+
+/* CARA SUPERIOR */
+
+.key-top {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(145deg,#0f172a,#020617);
+  border-radius: 18px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transform: translateZ(18px);
+  border: 1px solid rgba(255,255,255,.15);
+  box-shadow:
+    inset 0 0 18px rgba(255,255,255,.05),
+    0 18px 35px rgba(0,0,0,.8),
+    0 0 30px rgba(99,102,241,.25);
+}
+
+.key-top span {
+  font-size: .85rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: white;
+  text-shadow: 0 0 12px rgba(99,102,241,.8);
+}
+
+.key-top svg {
+  filter: drop-shadow(0 0 12px currentColor);
+}
+
+/* CUERPO DE LA TECLA */
+
+.keycap::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg,#020617,#000);
+  border-radius: 18px;
+  transform: translateZ(0);
+  box-shadow: 0 25px 40px rgba(0,0,0,.9);
+}
+
+/* GLOW */
+
+.keycap::after {
+  content:"";
+  position:absolute;
+  inset:-40%;
+  background: radial-gradient(circle, rgba(99,102,241,.6), transparent 65%);
+  filter: blur(45px);
+  opacity:.25;
+  z-index:-1;
+}
+
+/* ===== SKILL LEVEL BAR ===== */
+
+.skill-bar-wrapper {
+  margin-top: 60px;
+  width: 420px;
+  max-width: 90%;
+}
+
+.skill-bar-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 12px;
+  color: white;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.skill-bar-bg {
+  height: 14px;
+  background: rgba(255,255,255,.1);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: inset 0 0 12px rgba(0,0,0,.7);
+}
+
+.skill-bar-fill {
+  height: 100%;
+  border-radius: 20px;
+  box-shadow:
+    0 0 20px currentColor,
+    0 0 40px currentColor;
+}
+
+
+/* ESCALONADO COMO TECLADO */
+
+.keycap:nth-child(5n+2) { transform: translateY(10px); }
+.keycap:nth-child(5n+3) { transform: translateY(20px); }
+.keycap:nth-child(5n+4) { transform: translateY(10px); }
+
+/* RESPONSIVE */
+
+@media(max-width:900px){
+  .keyboard {
+    grid-template-columns: repeat(4, 70px);
+  }
+  .keycap {
+    width: 70px;
+    height: 70px;
+  }
+}

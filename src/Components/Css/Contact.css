@@ -1,0 +1,168 @@
+/* ===============================
+   CONTACT – CINEMATIC PANEL
+================================ */
+.glass-card {
+  position: relative;
+  width: 100%;
+  max-width: 640px;
+  margin: 0 auto;
+  margin-top: 8%;
+  padding: 48px 42px;
+
+  /* GLASS REAL */
+  background: transparent;
+  border-radius: 20px ;
+
+  box-shadow:
+    0 40px 120px rgba(0, 0, 0, 0.6),
+    inset 0 1px 0 rgba(255, 255, 255, 0.12);
+
+  border: 1px solid transparent;
+  color: #e8eaff;
+  overflow: hidden;
+}
+
+
+
+/* ===============================
+   ANIMATED BACKGROUND DETAIL
+================================ */
+
+.glass-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: 
+    radial-gradient(
+      circle at top left,
+      transparent,
+      transparent 45%
+    ),
+    radial-gradient(
+      circle at bottom right,
+      transparent,
+      transparent 45%
+    );
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+
+/* ===============================
+   HEADER
+================================ */
+
+.glow-text {
+  text-align: center;
+  font-size: 2.2rem;
+  font-weight: 600;
+  color: #c7c9ff;
+  margin-bottom: 8px;
+}
+
+.glass-card::after {
+  content: "Let’s build something together";
+  display: block;
+  text-align: center;
+  font-size: 0.85rem;
+  color: #f2f3ff;
+  margin-bottom: 32px;
+}
+
+/* ===============================
+   INPUTS
+================================ */
+
+.input-glow {
+  width: 100%;
+  padding: 16px 18px;
+  border-radius: 12px;
+
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+
+  color: #f2f3ff;
+  font-size: 0.95rem;
+
+  transition: border 0.25s ease, background 0.25s ease;
+}
+
+.input-glow::placeholder {
+  color: rgba(190, 195, 235, 0.45);
+}
+
+.input-glow:focus {
+  outline: none;
+  background: transparent;
+  border-color: rgba(130, 130, 255, 0.6);
+}
+
+/* ===============================
+   TEXTAREA
+================================ */
+
+.h-32 {
+  min-height: 140px;
+  resize: none;
+}
+
+/* ===============================
+   BUTTON
+================================ */
+
+.btn-glow {
+  margin-top: 32px;
+  padding: 16px;
+  border-radius: 14px;
+  border: none;
+  background:rgba(120, 120, 255, 0.45) ;
+  color: white;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.btn-glow:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 15px 40px rgba(120, 120, 255, 0.45);
+}
+
+.btn-glow:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* ===============================
+   STATUS MESSAGE
+================================ */
+
+.glass-card p {
+  margin-top: 20px;
+  text-align: center;
+  font-size: 0.85rem;
+  color: rgba(200, 205, 255, 0.75);
+}
+
+/* ===============================
+   SPACING HELPERS
+================================ */
+
+.mt-4 {
+  margin-top: 16px;
+}
+
+.mb-6 {
+  margin-bottom: 28px;
+}
+
+.p-8 {
+  padding: 48px;
+}
+
+.w-full {
+  width: 100%;
+}
+
+
+

@@ -1,0 +1,403 @@
+/* ===== HERO ===== */
+html {
+  scroll-behavior: smooth;
+}
+
+.hero {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+  padding: 0 8%;
+}
+
+.hero-container {
+  width: 100%;
+  max-width: 1300px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  align-items: center;
+  gap: 60px;
+}
+
+/* ===== IZQUIERDA ===== */
+
+.hero-content {
+  max-width: 650px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.hero-mini {
+  font-size: 0.78rem;
+  letter-spacing: 4px;
+  color: #22d3ee;
+  opacity: 0.9;
+}
+
+.hero-title {
+  font-size: clamp(1.1rem, 3vw, 5.5rem);
+  font-weight: 800;
+  letter-spacing: 3px;
+  color: #fff;
+  line-height: 1.2;
+  text-shadow:
+    0 0 25px #7c3aed,
+    0 0 80px rgba(124,58,237,.6);
+}
+
+.hero-title span {
+  background: linear-gradient(90deg,#a855f7,#22d3ee);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero-subtitle {
+  font-size: 0.8rem;
+  color: #a5b4fc;
+  max-width: 600px;
+  line-height: 1.6;
+}
+
+.hero-actions {
+  margin-top: 20px;
+  display: flex;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+
+/* ===== BOTONES ===== */
+
+.hero-btn {
+  padding: 13px 30px;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 600;
+  letter-spacing: 1px;
+  transition: 0.3s ease;
+  backdrop-filter: blur(10px);
+  display: inline-flex;
+  align-items: center;
+  margin-left: 8%;
+  justify-content: center;
+}
+
+.hero-btn.primary {
+  background: linear-gradient(90deg, #22d3ee, #7c3aed);
+  color: #020617;
+  box-shadow: 0 0 25px rgba(124,58,237,.6);
+}
+
+.hero-btn.primary:hover {
+  transform: scale(1.07);
+  box-shadow: 0 0 45px rgba(124,58,237,.9);
+}
+
+.hero-btn.secondary {
+  border: 1px solid rgba(124,58,237,.6);
+  color: #fff;
+  background: rgba(255,255,255,0.04);
+}
+
+.hero-btn.secondary:hover {
+  background: rgba(124,58,237,.15);
+  box-shadow: 0 0 20px rgba(124,58,237,.5);
+}
+
+/* ===== DERECHA / AVATAR ===== */
+
+.hero-visual {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-avatar {
+  position: relative;
+  width: 320px;
+  height: 320px;
+  border-radius: 50%;
+  padding: 6px;
+  background: linear-gradient(135deg,#a855f7,#22d3ee);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 0 80px rgba(168,85,247,0.45);
+}
+
+.hero-avatar img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  background: transparent;
+  z-index: 2;
+}
+
+/* ===== ANILLOS ===== */
+
+.ring {
+  position: absolute;
+  inset: -20px;
+  border-radius: 50%;
+  border: 2px solid transparent;
+  animation: spin 14s linear infinite;
+}
+
+.r1 {
+  border-top: 2px solid #a855f7;
+}
+
+.r2 {
+  inset: -40px;
+  border-bottom: 2px solid #22d3ee;
+  animation-duration: 22s;
+}
+
+/* ===== SCROLL ===== */
+
+.hero-scroll {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #22d3ee;
+  opacity: 0.7;
+  font-size: 0.8rem;
+  letter-spacing: 2px;
+}
+
+/* ===== ANIMACIONES ===== */
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ===== RESPONSIVE ===== */
+
+@media (max-width: 900px) {
+  .hero-container {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .hero-content {
+    align-items: center;
+  }
+
+  .hero-actions {
+    justify-content: center;
+  }
+
+  .hero-visual {
+    order: -1;
+    margin-bottom: 40px;
+  }
+}
+
+
+/*Apartado nuevo agregado animation scroll */
+
+.hero-scroll {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #22d3ee;
+  opacity: 0.7;
+  font-size: 0.8rem;
+  letter-spacing: 3px;
+  text-shadow: 0 0 12px #22d3ee;
+  cursor: default;
+}
+
+/* Cursor blink typing */
+
+.hero-title span::after {
+  content: "|";
+  margin-left: 4px;
+  animation: blink 1s infinite;
+  color: #22d3ee;
+}
+
+@keyframes blink {
+  0%,100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+/* ===== APARTADO DE ICONOS UII ===== */
+
+.hero-icons {
+  display: flex;
+  gap: 18px;
+  margin-top: 20px;
+  margin-left: 27%;
+}
+
+.hero-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  color: #c7d2fe;
+  border: 1px solid rgba(124,58,237,.4);
+  background: radial-gradient(circle at top, rgba(124,58,237,.25), rgba(0,0,0,.6));
+  box-shadow: 
+    0 0 12px rgba(124,58,237,.35),
+    inset 0 0 12px rgba(124,58,237,.25);
+  backdrop-filter: blur(6px);
+  transition: all .3s ease;
+}
+
+.hero-icon:hover {
+  color: white;
+  box-shadow:
+    0 0 18px #22d3ee,
+    0 0 45px rgba(34,211,238,.6);
+}
+
+
+
+
+@media (max-width: 1024px) {
+
+  .hero {
+    padding: 0 6%;
+  }
+
+  .hero-container {
+    gap: 40px;
+  }
+
+  .hero-avatar {
+    width: 280px;
+    height: 280px;
+  }
+
+  .hero-title {
+    font-size: clamp(2.2rem, 5vw, 4.5rem);
+  }
+
+  .hero-icons {
+    margin-left: 0;
+    justify-content: center;
+  }
+}
+
+
+
+
+@media (max-width: 768px) {
+
+  .hero {
+    min-height: auto;
+    padding: 120px 6% 80px;
+  }
+
+  .hero-container {
+    grid-template-columns: 1fr;
+    gap: 50px;
+    text-align: center;
+  }
+
+  /* CONTENIDO */
+  .hero-content {
+    align-items: center;
+  }
+
+  .hero-mini {
+    font-size: 0.7rem;
+    letter-spacing: 3px;
+  }
+
+  .hero-title {
+    font-size: 2.8rem;
+    letter-spacing: 2px;
+  }
+
+  .hero-subtitle {
+    font-size: 0.85rem;
+  }
+
+  /* BOTONES */
+  .hero-actions {
+    justify-content: center;
+  }
+
+  .hero-btn {
+    margin-left: 0;
+    width: auto;
+  }
+
+  /* AVATAR */
+  .hero-visual {
+    order: -1;
+  }
+
+  .hero-avatar {
+    width: 240px;
+    height: 240px;
+  }
+
+  .ring {
+    inset: -16px;
+  }
+
+  .r2 {
+    inset: -32px;
+  }
+
+  /* ICONOS */
+  .hero-icons {
+    justify-content: center;
+    margin-left: 0;
+  }
+
+  /* SCROLL */
+  .hero-scroll {
+    font-size: 0.7rem;
+    letter-spacing: 2px;
+  }
+}
+
+
+@media (max-width: 480px) {
+
+  .hero {
+    padding: 100px 5% 70px;
+  }
+
+  .hero-title {
+    font-size: 2.2rem;
+  }
+
+  .hero-subtitle {
+    font-size: 0.8rem;
+  }
+
+  .hero-avatar {
+    width: 200px;
+    height: 200px;
+  }
+
+  .hero-btn {
+    width: 100%;
+    padding: 14px 0;
+  }
+
+  .hero-icons {
+    gap: 14px;
+  }
+
+  .hero-icon {
+    width: 42px;
+    height: 42px;
+  }
+}
