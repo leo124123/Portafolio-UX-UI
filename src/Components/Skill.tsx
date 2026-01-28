@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import "./Css/skill.css";
+import "./Css/Skill.css";
 
 import {
   SiJavascript,
