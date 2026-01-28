@@ -44,7 +44,7 @@ const projects: Project[] = [
     title: "Weather App",
     desc: "Web weather application developed with React + Vite that consumes the OpenWeather API.",
     image: "/src/assets/Img/Weather-1.png",
-    demo: "https://weather-app-create-a-real-time-weather-app-wgp7-gj2o25mf1.vercel.app",
+    demo: "https://weather-app-create-a-real-time-weather-app-gefw-23imgy9nk.vercel.app",
     github: "https://github.com/leo124123/-Weather-App---Create-a-Real-Time-Weather-App.git",
     details: "#",
     gallery: [
